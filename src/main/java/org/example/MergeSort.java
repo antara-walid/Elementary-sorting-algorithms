@@ -20,6 +20,10 @@ public class MergeSort {
         int mid = start + (end -start)/2;
         sort(arr,temp,start,mid); // sort first half
         sort(arr,temp,mid+1,end); // sort second half
+
+        if(less(arr[mid],arr[mid+1])) // if the biggest element in the firs part is smaller than the smallest element in the second,
+            // which means the array is already sorted
+            return;
         merge(arr,temp,start,mid,end); // merge sorted halves
     }
     private static void merge(Comparable[] arr ,Comparable[] temp , int start ,int mid, int end)
@@ -29,6 +33,7 @@ public class MergeSort {
 
         int i = start;
         int j = mid+1;
+
 
         for(int k = start ; k <=end ; k++)
         {
