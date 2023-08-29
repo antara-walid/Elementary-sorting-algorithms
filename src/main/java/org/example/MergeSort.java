@@ -1,7 +1,7 @@
 package org.example;
 
 public class MergeSort {
-
+    private static int CONSTANT = 10;
     public static void sort(Comparable[] arr)
     {
         Comparable temp[] = new Comparable[arr.length];
@@ -9,6 +9,12 @@ public class MergeSort {
     }
     private static void sort(Comparable[] arr ,Comparable[] temp , int start , int end)
     {
+        if(end-start+1 < CONSTANT)
+        {
+            InsertionSort.sort(arr); // insertion sort is more optimal for the small arrays
+                                    // in case the size of the array becomes smaller than a defined constant we use insertion sort
+            return;
+        }
         if(start>=end)
             return;
         int mid = start + (end -start)/2;
