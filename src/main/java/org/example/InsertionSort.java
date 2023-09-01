@@ -3,7 +3,11 @@ package org.example;
 public class InsertionSort {
     public static void sort(Comparable[] arr)
     {
-        for(int i = 0 ; i < arr.length ; i++)
+        sort(arr,0,arr.length-1);
+    }
+    public static void sort(Comparable[] arr,int start, int end)
+    {
+        for(int i = start ; i < end+1 ; i++)
         {
 
             for(int j = i ; j>0 ;j--)
