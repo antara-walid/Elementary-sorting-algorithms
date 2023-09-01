@@ -11,7 +11,7 @@ public class MergeSort {
     {
         if(end-start+1 < CONSTANT)
         {
-            InsertionSort.sort(arr); // insertion sort is more optimal for the small arrays
+            InsertionSort.sort(arr,start,end); // insertion sort is more optimal for the small arrays
                                     // in case the size of the array becomes smaller than a defined constant we use insertion sort
             return;
         }
