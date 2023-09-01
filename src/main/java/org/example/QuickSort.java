@@ -3,6 +3,7 @@ package org.example;
 import java.util.*;
 
 public class QuickSort {
+    private static final int constant = 10;
 
     public static void main(String[] args) {
         Integer[] arr = new Integer[]{1,9,4,2,6};
@@ -25,6 +26,8 @@ public class QuickSort {
     {
         if(start>=end)
             return;
+        if(end-end+1 < constant)
+            InsertionSort.sort(arr,start,end);
         int partitionIndex = partition(arr,start,end);
         sort(arr,start,partitionIndex-1);
         sort(arr,partitionIndex+1,end);
